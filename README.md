@@ -1,0 +1,1 @@
+This project will be a tic-tac-toe game. It will be very simple, the user will be able to play two player or against a CPU. It will follow the Unix design because there will be seperate parts that will control the gameboard and a part that will be an algarithm for the CPU.
