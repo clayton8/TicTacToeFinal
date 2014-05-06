@@ -59,12 +59,13 @@ while True:
      if (choice=='2'):
           #While loop that continues until player 2 has entered a valid move
           while True:
-               cmd = raw_input('Enter Os move: ')
-               valid = myboard.setPiece(cmd,'O')
-               if(valid == 0):
-                    break
-               else:
-                    print("Spot Already Taken!")
+		if cmd == '1' or cmd == '2' or cmd == '3' or cmd == '4' or cmd == '5' or cmd == '6' or cmd == '7' or cmd =='8' or cmd == '9':
+               		cmd = raw_input('Enter Os move: ')
+              		valid = myboard.setPiece(cmd,'O')
+               		if(valid == 0):
+                    		break
+               		else:
+                    		print("Spot Already Taken!")
      else:
 	  #Will place a CPU move on the board. 
 	  myboard.setPiece( myboard.cpuMove(), 'O')
