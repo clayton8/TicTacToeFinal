@@ -8,7 +8,7 @@ myboard = board.Board() #Declare main Board object
 winX = False
 winO = False
 valid = 0
-
+TurnCount = 0
 #Print initial Display
 for value in range(0,50):
      print('\n')
@@ -35,6 +35,8 @@ print(myboard.showboard())
 
 #Main while loop
 while True:
+     
+     
      #While loop that continues until Player 1 enters a valid input
      while True:
           cmd = raw_input('Enter Xs Move: ')
@@ -51,9 +53,17 @@ while True:
      #Display updated board  
      print(myboard.showboard())
      #Check if X has won
-     winX = myboard.CheckWin('X')
+     winX = myboard.CheckWin('X',TurnCount)
      if (winX==True):
           myboard.xWin()
+          break
+     #Draw will always happen after x's Turn
+     #Check if Draw
+     TurnCount = TurnCount + 1
+     winDraw = myboard.CheckWin('3',TurnCount)
+     print(winDraw)
+     if(winDraw == True):
+          print("Draw!! ")
           break
      
      if (choice=='2'):
@@ -76,7 +86,9 @@ while True:
      #Display updated board
      print(myboard.showboard())
      #Check if O has won
-     winO = myboard.CheckWin('O')
+     winO = myboard.CheckWin('O',TurnCount)
      if(winO==True):
           myboard.oWin()
           break
+     
+     

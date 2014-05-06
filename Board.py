@@ -242,7 +242,7 @@ class Board:
      def UpdateBoard(self):
           self.state = ' ' + self.state.replace(' ',str(self.Piece[1]))[1:2] + ' | ' + self.state.replace(' ',str(self.Piece[2]))[5:6] + ' | ' + self.state.replace(' ',str(self.Piece[3]))[9:10] + ' ----------- ' + self.state.replace(' ',str(self.Piece[4]))[22:23] + ' | ' + self.state.replace(' ',str(self.Piece[5]))[26:27] + ' | ' +  self.state.replace(' ',str(self.Piece[6]))[30:31] + ' ----------- ' +  self.state.replace(' ',str(self.Piece[7]))[44:45] + ' | ' + self.state.replace(' ',str(self.Piece[8]))[48:49] + ' | ' + self.state.replace(' ',str(self.Piece[9]))[52:53]
            
-     def CheckWin(self,player):
+     def CheckWin(self,player,turn):
           if str(self.Piece[1])==player and str(self.Piece[2])==player and str(self.Piece[3])==player: return True
           if str(self.Piece[4])==player and str(self.Piece[5])==player and str(self.Piece[6])==player: return True
           if str(self.Piece[7])==player and str(self.Piece[8])==player and str(self.Piece[9])==player: return True
@@ -251,6 +251,7 @@ class Board:
           if str(self.Piece[3])==player and str(self.Piece[6])==player and str(self.Piece[9])==player: return True
           if str(self.Piece[1])==player and str(self.Piece[5])==player and str(self.Piece[9])==player: return True
           if str(self.Piece[3])==player and str(self.Piece[5])==player and str(self.Piece[7])==player: return True
+          if turn==5: return True
           return False
 		  
      def showboard(self):
