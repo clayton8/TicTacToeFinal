@@ -38,11 +38,12 @@ while True:
      #While loop that continues until Player 1 enters a valid input
      while True:
           cmd = raw_input('Enter Xs Move: ')
-          valid = myboard.setPiece(cmd,'X')
-          if(valid == 0):
-               break
-          else:
-               print("Spot Already Taken or Outside Range!")
+	  if cmd == '1' or cmd == '2' or cmd == '3' or cmd == '4' or cmd == '5' or cmd == '6' or cmd == '7' or cmd =='8' or cmd == '9':
+          	valid = myboard.setPiece(cmd,'X')
+          	if(valid == 0):
+              		break
+          	else:
+               		print("Spot Already Taken or Outside Range!")
      
      #Update the state of the board          
      myboard.UpdateBoard()
@@ -65,9 +66,8 @@ while True:
                else:
                     print("Spot Already Taken!")
      else:
-          #ENTER YOUR AI's move function here
-          #use myboard.setPiece(   , 'O') and store the returned value. You can use the check function above if you want or not. Your choice
-          a=1
+	  #Will place a CPU move on the board. 
+	  myboard.setPiece( myboard.cpuMove(), 'O')
  
      #Update the state of the board          
      myboard.UpdateBoard()
