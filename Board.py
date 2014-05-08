@@ -239,6 +239,18 @@ class Board:
 
 	return space	
 
+     def Instruct(self):
+          for value in range(0,50):
+               print('\n')
+          
+          print("Game Modes: \n")
+          print("1-Player: Single player game mode.1 human player vs AI controlled player 2")
+          print("\n2-Player: Two player game mode.Player 1 will use X as its piece and player 2 will have O")
+          print("\nRules/objective:::")
+          print("\n1)Objective is to place three pieces in a row")
+          print("2)You may not place a piece in a spot that is already occupied")
+          print("3)Using numbers 1-9 select the position you would like to place your piece and then press enter")
+
      def UpdateBoard(self):
           self.state = ' ' + self.state.replace(' ',str(self.Piece[1]))[1:2] + ' | ' + self.state.replace(' ',str(self.Piece[2]))[5:6] + ' | ' + self.state.replace(' ',str(self.Piece[3]))[9:10] + ' ----------- ' + self.state.replace(' ',str(self.Piece[4]))[22:23] + ' | ' + self.state.replace(' ',str(self.Piece[5]))[26:27] + ' | ' +  self.state.replace(' ',str(self.Piece[6]))[30:31] + ' ----------- ' +  self.state.replace(' ',str(self.Piece[7]))[44:45] + ' | ' + self.state.replace(' ',str(self.Piece[8]))[48:49] + ' | ' + self.state.replace(' ',str(self.Piece[9]))[52:53]
            

@@ -9,27 +9,36 @@ winX = False
 winO = False
 valid = 0
 TurnCount = 0
+
 #Print initial Display
 for value in range(0,50):
      print('\n')
 
-print('__________.__       __________             __________                 ')
-print('\__    __/|__|  ___ \__    __/____  ______ \__    __/ ____    _____   ')
-print('   |  |   |  | /  _\   |  |  \__  \ \  ___\   |  |   / __ \  /  __ \  ')
-print('   |  |   |  | | |_    |  |   / ^  \ \ \____  |  |  | |__| |(   ___/  ')
-print('   |__|   |__| \___/   |__|  (___\__\ \_____\ |__|   \____/  \______\ ')
-print('                   ____________________                               ')
-print('\_________________/                    \______________________/\/\/\/ ')
-print('\n')
-print('   1: 1 - Player                          2: 2 - Player		     ')
+while True:
+     print('__________.__       __________             __________                 ')
+     print('\__    __/|__|  ___ \__    __/____  ______ \__    __/ ____    _____   ')
+     print('   |  |   |  | /  _\   |  |  \__  \ \  ___\   |  |   / __ \  /  __ \  ')
+     print('   |  |   |  | | |_    |  |   / ^  \ \ \____  |  |  | |__| |(   ___/  ')
+     print('   |__|   |__| \___/   |__|  (___\__\ \_____\ |__|   \____/  \______\ ')
+     print('                   ____________________                               ')
+     print('\_________________/                    \______________________/\/\/\/ ')
+     print('\n')
+     print('   1: 1 - Player        2: 2 - Player      3: Instructions            ')
 
 #Take in the choice of 1 player or 2
-while True:
+
      choice = raw_input('Enter Choice : ')
      if(choice=='1' or choice=='2'):
           break
+     
+     elif(choice=='3'):
+          myboard.Instruct()
      else:
-          print("\nInvalid Entry: Enter 1 or 2\n")
+          for value in range(0,50):
+               print('\n')
+          print("\nInvalid Entry: Enter 1, 2 or 3\n")
+
+
 #Show the display and the initial Board
 print(myboard.showboard())
 
