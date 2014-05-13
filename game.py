@@ -55,6 +55,8 @@ while True:
               		break
           	else:
                		print("Spot Already Taken or Outside Range!")
+	  else:
+		print("Invalid entry, please choose a numerical value.")
      
      #Update the state of the board          
      myboard.UpdateBoard()
@@ -70,7 +72,6 @@ while True:
      #Check if Draw
      TurnCount = TurnCount + 1
      winDraw = myboard.CheckWin('3',TurnCount)
-     print(winDraw)
      if(winDraw == True):
           print("Draw!! ")
           break
@@ -78,13 +79,15 @@ while True:
      if (choice=='2'):
           #While loop that continues until player 2 has entered a valid move
           while True:
+               	cmd = raw_input('Enter Os move: ')
 		if cmd == '1' or cmd == '2' or cmd == '3' or cmd == '4' or cmd == '5' or cmd == '6' or cmd == '7' or cmd =='8' or cmd == '9':
-               		cmd = raw_input('Enter Os move: ')
               		valid = myboard.setPiece(cmd,'O')
                		if(valid == 0):
                     		break
                		else:
                     		print("Spot Already Taken!")
+		else:
+			print("Invalid entry, please choose a numerical value.")
      else:
 	  #Will place a CPU move on the board. 
 	  myboard.setPiece( myboard.cpuMove(), 'O')

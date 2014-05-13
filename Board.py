@@ -172,8 +172,6 @@ class Board:
                 lineFilled[2]+=1
                 lineFilled[5]+=1
                 lineFilled[6]+=1
-	print(dangerValue)
-	print (lineFilled)
 	pieceSet = -1
 	counter = 0
 	#Check for a winning spot or a place to block
